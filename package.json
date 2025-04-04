@@ -1,0 +1,38 @@
+{
+    "name": "query-key-generator",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "generator": "pnpm --filter @cozi/query-key-generator",
+        "used-generator": "pnpm --filter @cozi/query-key-used-generator",
+        "used-viewer": "pnpm --filter @cozi/query-key-used-viewer",
+        "explorer": "pnpm --filter explorer",
+        "format": "prettier --write .",
+        "lint": "eslint .",
+        "prepare": "husky",
+        "lint-staged": "lint-staged"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^7.13.1",
+        "@typescript-eslint/parser": "^7.13.1",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-prettier": "^5.1.3",
+        "husky": "^9.0.11",
+        "lint-staged": "^15.2.7",
+        "prettier": "^3.5.1"
+    },
+    "lint-staged": {
+        "**/*.{js,ts,tsx}": [
+            "eslint --fix"
+        ],
+        "**/*": "prettier --write --ignore-unknown"
+    },
+    "dependencies": {
+        "@changesets/cli": "^2.28.1"
+    }
+}

@@ -1,0 +1,39 @@
+{
+    "name": "@cozi/query-key-used-viewer",
+    "version": "1.0.0",
+    "type": "module",
+    "exports": {
+        ".": {
+            "types": "./lib/index.d.ts",
+            "import": "./lib/index.js",
+            "require": "./lib/index.cjs"
+        },
+        "./style.css": "./lib/style.css",
+        "./test": "./src/index.ts",
+        "./package.json": "./package.json"
+    },
+    "main": "./lib/index.cjs",
+    "files": [
+        "lib",
+        "src"
+    ],
+    "scripts": {
+        "clean": "rm -rf lib",
+        "build": "vite build"
+    },
+    "dependencies": {
+        "@xyflow/react": "^12.5.1"
+    },
+    "peerDependencies": {
+        "react": ">=18.0.0",
+        "react-dom": ">=18.0.0"
+    },
+    "devDependencies": {
+        "@types/react": "^19.0.8",
+        "@types/react-dom": "^19.0.3",
+        "@vitejs/plugin-react": "^4.3.4",
+        "globby": "^14.1.0",
+        "vite": "^6.2.3",
+        "vite-plugin-dts": "^4.5.0"
+    }
+}

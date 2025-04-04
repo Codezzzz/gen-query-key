@@ -9,14 +9,8 @@ on:
             - '.changeset/**'
     workflow_dispatch:
 
-concurrency: ${{ github.workflow }}-${{ github.ref }}
-
-env:
-    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
 jobs:
     release:
-        name: Release Query Key Generator Packages
         runs-on: ubuntu-latest
         permissions:
             contents: write
@@ -24,10 +18,9 @@ jobs:
             pull-requests: write
 
         steps:
-            - name: Checkout Repo
+            - name: Checkout code
               uses: actions/checkout@v3
               with:
-                  # This makes Actions fetch all Git history so that Changesets can generate changelogs with the correct commits
                   fetch-depth: 0
 
             - uses: pnpm/action-setup@v2
@@ -43,14 +36,14 @@ jobs:
             - name: Install dependencies
               run: pnpm install
 
-            - name: 릴리즈 Pull Request를 만들거나 패키지를 배포해요
+            - name: Create version PR or publish
               id: changesets
               uses: changesets/action@v1
               with:
-                  publish: pnpm release
+                  version: pnpm changeset version
+                  publish: pnpm changeset publish --no-git-checks
                   commit: 'ci(changeset): version packages'
                   title: 'ci(changeset): version packages'
-                  version: 'pnpm changeset version'
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                   NPM_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}

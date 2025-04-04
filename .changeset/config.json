@@ -3,7 +3,7 @@
     "changelog": "@changesets/cli/changelog",
     "commit": false,
     "fixed": [],
-    "linked": [["@query-key-used-viewer", "@query-key-used-generator", "@query-key-generator"]],
+    "linked": [["@query-key/used-viewer", "@query-key/used-generator", "@query-key/generator"]],
     "access": "public",
     "baseBranch": "main",
     "updateInternalDependencies": "patch",

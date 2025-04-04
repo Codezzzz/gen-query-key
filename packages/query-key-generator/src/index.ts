@@ -2,7 +2,7 @@ import { Plugin } from 'vite';
 
 import path from 'path';
 
-import { Programmer } from '@hjchoi/query-key-generator-common';
+import { Programmer } from '@query-key/generator-common';
 import { QueryKeyGenerator } from './core';
 import { ConfigOptions, configSchema, defaultConfig } from './types/config';
 
@@ -17,7 +17,7 @@ export default function QueryKeyPlugin(_config?: Omit<ConfigOptions, 'path'>): P
     const generator = new QueryKeyGenerator(program, config);
 
     return {
-        name: '@hjchoi/query-key-generator',
+        name: '@query-key/generator',
         enforce: 'pre',
         configureServer(server) {
             const listener = (absolutePath = '') => {

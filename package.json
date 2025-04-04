@@ -1,6 +1,6 @@
 {
     "name": "@query-key-gen/generator-project",
-    "version": "0.0.1",
+    "version": "0.0.0",
     "private": true,
     "type": "module",
     "scripts": {
@@ -13,7 +13,8 @@
         "prepare": "husky",
         "lint-staged": "lint-staged",
         "packages:build": "pnpm --filter @query-key-gen/generator build && pnpm --filter @query-key-gen/used-generator build && pnpm --filter @query-key-gen/used-viewer build",
-        "release": "pnpm packages:build && pnpm changeset publish"
+        "release": "pnpm packages:build && pnpm changeset publish",
+        "version": "pnpm changeset version"
     },
     "devDependencies": {
         "@typescript-eslint/eslint-plugin": "^7.13.1",

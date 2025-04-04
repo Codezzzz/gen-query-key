@@ -29,5 +29,8 @@
     "devDependencies": {
         "@cozi/query-key-generator-common": "workspace:*",
         "@types/node": "^22.13.14"
+    },
+    "publishConfig": {
+        "access": "public"
     }
 }

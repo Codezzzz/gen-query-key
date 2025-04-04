@@ -6,8 +6,8 @@
     "linked": [
         [
             "@cozi/query-key-used-viewer",
-            "@cozi/query-key-used-viewer-react",
-            "@cozi/query-key-used-viewer-react-dom"
+            "@cozi/query-key-used-generator",
+            "@cozi/query-key-generator"
         ]
     ],
     "access": "restricted",

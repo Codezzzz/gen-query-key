@@ -1,5 +1,5 @@
-import { QueryKeyUsedViewer } from '@hjchoi/query-key-used-viewer/test';
-import '@hjchoi/query-key-used-viewer/style.css';
+import { QueryKeyUsedViewer } from '@query-key-used-viewer/test';
+import '@query-key-used-viewer/style.css';
 
 import { createRoot } from 'react-dom/client';
 import App from './App';

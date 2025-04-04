@@ -1,5 +1,5 @@
 {
-    "name": "@hjchoi/query-key-generator",
+    "name": "@query-key-generator",
     "version": "1.0.0",
     "description": "",
     "type": "module",
@@ -27,7 +27,7 @@
         "zod": "^3.24.2"
     },
     "devDependencies": {
-        "@hjchoi/query-key-generator-common": "workspace:*",
+        "@query-key-generator-common": "workspace:*",
         "@types/node": "^22.13.14"
     },
     "publishConfig": {

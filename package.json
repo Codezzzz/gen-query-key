@@ -1,11 +1,11 @@
 {
-    "name": "@hjchoi/query-key-generator-project",
+    "name": "@query-key-generator-project",
     "version": "0.0.0",
     "private": true,
     "scripts": {
-        "generator": "pnpm --filter @hjchoi/query-key-generator",
-        "used-generator": "pnpm --filter @hjchoi/query-key-used-generator",
-        "used-viewer": "pnpm --filter @hjchoi/query-key-used-viewer",
+        "generator": "pnpm --filter @query-key-generator",
+        "used-generator": "pnpm --filter @query-key-used-generator",
+        "used-viewer": "pnpm --filter @query-key-used-viewer",
         "explorer": "pnpm --filter explorer",
         "format": "prettier --write .",
         "lint": "eslint .",

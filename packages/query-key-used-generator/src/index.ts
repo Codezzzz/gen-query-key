@@ -18,7 +18,7 @@ export default function QueryKeyUsedPlugin(_config?: Omit<ConfigOptions, 'path'>
     const generator = new QueryKeyUsedInfoGenerator(program, config);
 
     return {
-        name: '@hjchoi/query-key-used-generator',
+        name: '@query-key-used-generator',
         enforce: 'pre',
         configureServer(server) {
             const listener = (absolutePath = '') => {

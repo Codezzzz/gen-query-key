@@ -1,5 +1,11 @@
 # @query-key-gen/generator
 
+## 0.2.0
+
+### Minor Changes
+
+- acc33fb: update
+
 ## 0.1.0
 
 ### Minor Changes

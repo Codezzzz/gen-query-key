@@ -16,5 +16,9 @@
     "snapshot": {
         "useCalculatedVersion": true
     },
-    "ignore": ["explorer", "@cozi/query-key-generator-common"]
+    "ignore": ["explorer", "@cozi/query-key-generator-common"],
+    "privatePackages": {
+        "tag": false,
+        "version": false
+    }
 }

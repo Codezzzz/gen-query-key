@@ -1,6 +1,6 @@
 {
-    "name": "@query-key/used-viewer",
-    "version": "1.0.0",
+    "name": "@query-key-gen/used-viewer",
+    "version": "0.0.0",
     "type": "module",
     "exports": {
         ".": {

@@ -1,1 +1,1 @@
-declare module '@query-key/used-viewer/style.css';
+declare module '@query-key-gen/used-viewer/style.css';

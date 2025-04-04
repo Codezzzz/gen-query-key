@@ -36,13 +36,13 @@ importers:
 
   explorer:
     dependencies:
-      '@query-key/generator':
+      '@query-key-gen/generator':
         specifier: workspace:^
         version: link:../packages/query-key-generator
-      '@query-key/used-generator':
+      '@query-key-gen/used-generator':
         specifier: workspace:^
         version: link:../packages/query-key-used-generator
-      '@query-key/used-viewer':
+      '@query-key-gen/used-viewer':
         specifier: workspace:^
         version: link:../packages/query-key-used-viewer
       '@tanstack/react-query':
@@ -126,7 +126,7 @@ importers:
         specifier: ^3.24.2
         version: 3.24.2
     devDependencies:
-      '@query-key/generator-common':
+      '@query-key-gen/generator-common':
         specifier: workspace:*
         version: link:../common
       '@types/node':
@@ -151,7 +151,7 @@ importers:
         specifier: ^3.24.2
         version: 3.24.2
     devDependencies:
-      '@query-key/generator-common':
+      '@query-key-gen/generator-common':
         specifier: workspace:*
         version: link:../common
       '@types/node':

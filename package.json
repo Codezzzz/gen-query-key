@@ -1,17 +1,19 @@
 {
-    "name": "@query-key/generator-project",
+    "name": "@query-key-gen/generator-project",
     "version": "0.0.0",
     "private": true,
     "type": "module",
     "scripts": {
-        "generator": "pnpm --filter @query-key/generator",
-        "used-generator": "pnpm --filter @query-key/used-generator",
-        "used-viewer": "pnpm --filter @query-key/used-viewer",
+        "generator": "pnpm --filter @query-key-gen/generator",
+        "used-generator": "pnpm --filter @query-key-gen/used-generator",
+        "used-viewer": "pnpm --filter @query-key-gen/used-viewer",
         "explorer": "pnpm --filter explorer",
         "format": "prettier --write .",
         "lint": "eslint .",
         "prepare": "husky",
-        "lint-staged": "lint-staged"
+        "lint-staged": "lint-staged",
+        "packages:build": "pnpm --filter @query-key-gen/generator build && pnpm --filter @query-key-gen/used-generator build && pnpm --filter @query-key-gen/used-viewer build",
+        "release": "pnpm packages:build && pnpm changeset publish"
     },
     "devDependencies": {
         "@typescript-eslint/eslint-plugin": "^7.13.1",

@@ -47,7 +47,7 @@ jobs:
               id: changesets
               uses: changesets/action@v1
               with:
-                  publish: pnpm changeset publish --access public --no-git-checks
+                  publish: pnpm release
                   commit: 'ci(changeset): version packages'
                   title: 'ci(changeset): version packages'
               env:

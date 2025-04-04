@@ -1,6 +1,6 @@
 {
-    "name": "@query-key/generator",
-    "version": "1.0.0",
+    "name": "@query-key-gen/generator",
+    "version": "0.0.0",
     "description": "",
     "type": "module",
     "exports": {
@@ -27,7 +27,7 @@
         "zod": "^3.24.2"
     },
     "devDependencies": {
-        "@query-key/generator-common": "workspace:*",
+        "@query-key-gen/generator-common": "workspace:*",
         "@types/node": "^22.13.14"
     },
     "publishConfig": {

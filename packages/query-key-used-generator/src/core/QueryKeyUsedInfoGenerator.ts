@@ -3,7 +3,7 @@ import ts from 'typescript';
 
 import { QueryKeyUsedFinder } from '../queryFinder/QueryKeyUsedFinder';
 import { prettify } from '../utils';
-import { GenericRunner } from '@query-key/generator-common';
+import { GenericRunner } from '@query-key-gen/generator-common';
 import path from 'path';
 import { ConfigOptions } from '../types/config';
 

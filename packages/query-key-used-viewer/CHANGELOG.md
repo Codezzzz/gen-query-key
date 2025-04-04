@@ -1,5 +1,11 @@
 # @query-key-gen/used-viewer
 
+## 0.5.0
+
+### Minor Changes
+
+- bbd5dac: update
+
 ## 0.4.0
 
 ### Minor Changes

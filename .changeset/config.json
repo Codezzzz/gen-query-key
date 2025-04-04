@@ -16,7 +16,7 @@
     "snapshot": {
         "useCalculatedVersion": true
     },
-    "ignore": ["explorer"],
+    "ignore": [],
     "privatePackages": {
         "tag": false,
         "version": false

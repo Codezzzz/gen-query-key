@@ -5,9 +5,9 @@
     "fixed": [],
     "linked": [
         [
-            "@cozi/query-key-used-viewer",
-            "@cozi/query-key-used-generator",
-            "@cozi/query-key-generator"
+            "@hjchoi/query-key-used-viewer",
+            "@hjchoi/query-key-used-generator",
+            "@hjchoi/query-key-generator"
         ]
     ],
     "access": "public",

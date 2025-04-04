@@ -1,5 +1,5 @@
 {
-    "name": "@cozi/query-key-generator-common",
+    "name": "@hjchoi/query-key-generator-common",
     "version": "1.0.0",
     "private": true,
     "type": "module",

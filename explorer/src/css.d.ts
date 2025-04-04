@@ -1,1 +1,1 @@
-declare module '@cozi/query-key-used-viewer/style.css';
+declare module '@hjchoi/query-key-used-viewer/style.css';

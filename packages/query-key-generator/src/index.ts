@@ -2,7 +2,7 @@ import { Plugin } from 'vite';
 
 import path from 'path';
 
-import { Programmer } from '@cozi/query-key-generator-common';
+import { Programmer } from '@hjchoi/query-key-generator-common';
 import { QueryKeyGenerator } from './core';
 import { ConfigOptions, configSchema, defaultConfig } from './types/config';
 
@@ -14,11 +14,10 @@ export default function QueryKeyPlugin(_config?: Omit<ConfigOptions, 'path'>): P
     const rootDir = process.cwd(); // 프로젝트 루트 경로
     const ignoreFiles = config.ignoreFiles;
     const program = new Programmer(config);
-
     const generator = new QueryKeyGenerator(program, config);
 
     return {
-        name: '@cozi/query-key-generator',
+        name: '@hjchoi/query-key-generator',
         enforce: 'pre',
         configureServer(server) {
             const listener = (absolutePath = '') => {

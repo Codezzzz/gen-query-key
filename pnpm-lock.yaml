@@ -36,13 +36,13 @@ importers:
 
   explorer:
     dependencies:
-      '@cozi/query-key-generator':
+      '@hjchoi/query-key-generator':
         specifier: workspace:^
         version: link:../packages/query-key-generator
-      '@cozi/query-key-used-generator':
+      '@hjchoi/query-key-used-generator':
         specifier: workspace:^
         version: link:../packages/query-key-used-generator
-      '@cozi/query-key-used-viewer':
+      '@hjchoi/query-key-used-viewer':
         specifier: workspace:^
         version: link:../packages/query-key-used-viewer
       '@tanstack/react-query':
@@ -126,7 +126,7 @@ importers:
         specifier: ^3.24.2
         version: 3.24.2
     devDependencies:
-      '@cozi/query-key-generator-common':
+      '@hjchoi/query-key-generator-common':
         specifier: workspace:*
         version: link:../common
       '@types/node':
@@ -151,7 +151,7 @@ importers:
         specifier: ^3.24.2
         version: 3.24.2
     devDependencies:
-      '@cozi/query-key-generator-common':
+      '@hjchoi/query-key-generator-common':
         specifier: workspace:*
         version: link:../common
       '@types/node':

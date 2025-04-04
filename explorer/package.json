@@ -11,9 +11,9 @@
         "preview": "vite preview"
     },
     "dependencies": {
-        "@cozi/query-key-generator": "workspace:^",
-        "@cozi/query-key-used-generator": "workspace:^",
-        "@cozi/query-key-used-viewer": "workspace:^",
+        "@hjchoi/query-key-generator": "workspace:^",
+        "@hjchoi/query-key-used-generator": "workspace:^",
+        "@hjchoi/query-key-used-viewer": "workspace:^",
         "@tanstack/react-query": "^5.66.7",
         "@xyflow/react": "^12.5.1",
         "react": "^19.0.0",

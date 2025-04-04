@@ -16,7 +16,7 @@ env:
 
 jobs:
     release:
-        name: Release Seed Design Packages
+        name: Release Query Key Generator Packages
         runs-on: ubuntu-latest
         permissions:
             contents: write

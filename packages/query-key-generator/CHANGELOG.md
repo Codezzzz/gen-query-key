@@ -1,5 +1,11 @@
 # @query-key-gen/generator
 
+## 0.11.2
+
+### Patch Changes
+
+- 6f41f60: update readme.md
+
 ## 0.11.1
 
 ### Patch Changes

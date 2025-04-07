@@ -1,5 +1,11 @@
 # @query-key-gen/generator
 
+## 0.11.1
+
+### Patch Changes
+
+- 9d0a6dc: update query-key-generator README.md
+
 ## 0.11.0
 
 ### Minor Changes

@@ -40,20 +40,17 @@ importers:
   explorer:
     dependencies:
       '@query-key-gen/generator':
-        specifier: workspace:^
-        version: link:../packages/query-key-generator
+        specifier: ^0.11.1
+        version: 0.11.1(@microsoft/api-extractor@7.52.2(@types/node@22.13.14))(@types/node@22.13.14)(postcss@8.5.3)(yaml@2.7.1)
       '@query-key-gen/used-generator':
-        specifier: workspace:^
-        version: link:../packages/query-key-used-generator
+        specifier: ^0.11.0
+        version: 0.11.0(@microsoft/api-extractor@7.52.2(@types/node@22.13.14))(@types/node@22.13.14)(postcss@8.5.3)(yaml@2.7.1)
       '@query-key-gen/used-viewer':
-        specifier: workspace:^
-        version: link:../packages/query-key-used-viewer
+        specifier: ^0.11.0
+        version: 0.11.0(@types/react@19.0.12)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@tanstack/react-query':
         specifier: ^5.66.7
         version: 5.71.1(react@19.1.0)
-      '@xyflow/react':
-        specifier: ^12.5.1
-        version: 12.5.2(@types/react@19.0.12)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       react:
         specifier: ^19.0.0
         version: 19.1.0
@@ -604,6 +601,18 @@ packages:
   '@pkgr/core@0.2.0':
     resolution: {integrity: sha512-vsJDAkYR6qCPu+ioGScGiMYR7LvZYIXh/dlQeviqoTWNCVfKTLYD/LkNWH4Mxsv2a5vpIRc77FN5DnmK1eBggQ==}
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
+
+  '@query-key-gen/generator@0.11.1':
+    resolution: {integrity: sha512-CD6rKtSzSBW4QXiAYxvSOhmDAsd/UpXRaITAULFQyOXVT869US2iq37S5lZ/deP+R+cT8Y1tJO6lo40FdQlPwg==}
+
+  '@query-key-gen/used-generator@0.11.0':
+    resolution: {integrity: sha512-q2ZTuCr2RUun32mwChid+JH1OrLZwcb153NCpukdgEiZ90SaRN/fLwvj9ovWa+VWcyxD1mAiJTKwkf1xwfEqxg==}
+
+  '@query-key-gen/used-viewer@0.11.0':
+    resolution: {integrity: sha512-+7l1TAoplq7dm22CmPW3R1ARosrgwfXS0XjTw0w8SVAH+XdXz5A//qsxVXnTZelvtAmHEfnVL14M12/YhP52nQ==}
+    peerDependencies:
+      react: '>=18.0.0'
+      react-dom: '>=18.0.0'
 
   '@rollup/pluginutils@5.1.4':
     resolution: {integrity: sha512-USm05zrsFxYLPdWWq+K3STlWiT/3ELn3RcV5hJMghpeAIhxfsUIg6mt12CBJBInWMV4VneoV7SfGv8xIwo2qNQ==}
@@ -2907,6 +2916,63 @@ snapshots:
     optional: true
 
   '@pkgr/core@0.2.0': {}
+
+  '@query-key-gen/generator@0.11.1(@microsoft/api-extractor@7.52.2(@types/node@22.13.14))(@types/node@22.13.14)(postcss@8.5.3)(yaml@2.7.1)':
+    dependencies:
+      fast-glob: 3.3.3
+      tsup: 8.4.0(@microsoft/api-extractor@7.52.2(@types/node@22.13.14))(postcss@8.5.3)(typescript@5.7.3)(yaml@2.7.1)
+      typescript: 5.7.3
+      vite: 6.2.4(@types/node@22.13.14)(yaml@2.7.1)
+      zod: 3.24.2
+    transitivePeerDependencies:
+      - '@microsoft/api-extractor'
+      - '@swc/core'
+      - '@types/node'
+      - jiti
+      - less
+      - lightningcss
+      - postcss
+      - sass
+      - sass-embedded
+      - stylus
+      - sugarss
+      - supports-color
+      - terser
+      - tsx
+      - yaml
+
+  '@query-key-gen/used-generator@0.11.0(@microsoft/api-extractor@7.52.2(@types/node@22.13.14))(@types/node@22.13.14)(postcss@8.5.3)(yaml@2.7.1)':
+    dependencies:
+      fast-glob: 3.3.3
+      tsup: 8.4.0(@microsoft/api-extractor@7.52.2(@types/node@22.13.14))(postcss@8.5.3)(typescript@5.7.3)(yaml@2.7.1)
+      typescript: 5.7.3
+      vite: 6.2.4(@types/node@22.13.14)(yaml@2.7.1)
+      zod: 3.24.2
+    transitivePeerDependencies:
+      - '@microsoft/api-extractor'
+      - '@swc/core'
+      - '@types/node'
+      - jiti
+      - less
+      - lightningcss
+      - postcss
+      - sass
+      - sass-embedded
+      - stylus
+      - sugarss
+      - supports-color
+      - terser
+      - tsx
+      - yaml
+
+  '@query-key-gen/used-viewer@0.11.0(@types/react@19.0.12)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+    dependencies:
+      '@xyflow/react': 12.5.2(@types/react@19.0.12)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      react: 19.1.0
+      react-dom: 19.1.0(react@19.1.0)
+    transitivePeerDependencies:
+      - '@types/react'
+      - immer
 
   '@rollup/pluginutils@5.1.4(rollup@4.38.0)':
     dependencies:

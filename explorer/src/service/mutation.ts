@@ -1,4 +1,5 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { globalQueryKeys } from '../queryKeys';
 
 export const useExampleMutation = () => {
     const queryClient = useQueryClient();
@@ -7,7 +8,7 @@ export const useExampleMutation = () => {
             return Promise.resolve();
         },
         onSuccess: () => {
-            queryClient.invalidateQueries({});
+            queryClient.invalidateQueries({ queryKey: globalQueryKeys.post['def'] });
         }
     });
 };

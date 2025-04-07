@@ -1,11 +1,11 @@
 {
     "files": {
         ".turbo": "1743985135227.3757",
-        "lib": "1743986048150.272",
+        "lib": "1743987587283.9705",
         "node_modules": "1743751613372.595",
-        "CHANGELOG.md": "c07c33629dc1a0ab68359d7fda69adbd376d3bbd",
+        "CHANGELOG.md": "a363bfc513a9606ed0853b31d24decfd2c7e41d3",
         "README.md": "8e99a27f87a0380bc345c661ac53f0b338141bf0",
-        "package.json": "5214a3b7fedca5d9a6d94dcd9fb664c917cedd3d",
+        "package.json": "3a73c22202dd45fa8005adda3bffe1e6f57a628f",
         "src/core/QueryKeyGenerator.ts": "d3d5c39704fd84705766ad7804f2ae4519d4d99a",
         "src/core/index.ts": "d94630deb24d720ff8b572d2d6325f850ef000ae",
         "src/factories/ExportSpecifierFactory.ts": "fb04bc7981603fac2562b14089cf0f14a4689292",

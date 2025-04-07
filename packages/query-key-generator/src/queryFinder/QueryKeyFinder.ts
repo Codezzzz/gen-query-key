@@ -47,7 +47,6 @@ namespace QueryKeyFinder {
                                 const initializer = valueDeclaration.initializer;
 
                                 if (initializer && ts.isCallExpression(initializer)) {
-                                    console.log(initializer);
                                     visit(initializer);
                                 }
                             }
@@ -136,6 +135,7 @@ namespace QueryKeyFinder {
 
                                             if (expression && ts.isCallExpression(expression)) {
                                                 const argument = expression.arguments;
+                                                const callExpression = expression.expression;
 
                                                 argument.forEach(arg => {
                                                     if (ts.isObjectLiteralExpression(arg)) {
@@ -144,36 +144,19 @@ namespace QueryKeyFinder {
                                                         );
                                                     }
                                                 });
+
+                                                visit(callExpression);
                                             }
                                         }
                                     });
                                 }
 
+                                if (ts.isArrowFunction(body)) {
+                                    visit(body);
+                                }
+
                                 if (ts.isCallExpression(body)) {
                                     visit(body);
-
-                                    // const argument = body.arguments;
-
-                                    // argument.forEach(arg => {
-                                    //     if (ts.isObjectLiteralExpression(arg)) {
-                                    //         const properties = arg.properties;
-
-                                    //         properties.forEach(property => {
-                                    //             if (ts.isPropertyAssignment(property)) {
-                                    //                 const initializer = property.initializer;
-
-                                    //                 if (ts.isArrayLiteralExpression(initializer)) {
-                                    //                     arrayLiteral.push(
-                                    //                         makeArrayLiteral(
-                                    //                             initializer.elements,
-                                    //                             checker
-                                    //                         )
-                                    //                     );
-                                    //                 }
-                                    //             }
-                                    //         });
-                                    //     }
-                                    // });
                                 }
                             }
                         }
@@ -209,6 +192,14 @@ namespace QueryKeyFinder {
 
                                     if (ts.isArrayLiteralExpression(body)) {
                                         arrayLiteral.push(makeArrayLiteral(body.elements, checker));
+                                    }
+
+                                    if (ts.isBlock(body)) {
+                                        const statements = body.statements;
+
+                                        statements.forEach(statement => {
+                                            visit(statement);
+                                        });
                                     }
                                 }
                             }
@@ -419,7 +410,7 @@ namespace QueryKeyFinder {
     ) => {
         const expression = node.expression;
         const propertyName = node.name.getText();
-        let arrayLiteral: IQueryNodeType[] = [];
+        const arrayLiteral: IQueryNodeType[] = [];
 
         if (expression && ts.isIdentifier(expression)) {
             const valueDeclaration = checker.getSymbolAtLocation(expression)?.valueDeclaration;
@@ -437,15 +428,21 @@ namespace QueryKeyFinder {
                         const targetInitializer = targetProperty.initializer;
 
                         if (ts.isArrayLiteralExpression(targetInitializer)) {
-                            arrayLiteral = makeArrayLiteral(targetInitializer.elements, checker);
+                            arrayLiteral.push(
+                                ...makeArrayLiteral(targetInitializer.elements, checker)
+                            );
                         }
 
                         if (ts.isArrowFunction(targetInitializer)) {
                             const body = targetInitializer.body;
 
                             if (ts.isArrayLiteralExpression(body)) {
-                                arrayLiteral = makeArrayLiteral(body.elements, checker);
+                                arrayLiteral.push(...makeArrayLiteral(body.elements, checker));
                             }
+                        }
+
+                        if (ts.isCallExpression(targetInitializer)) {
+                            arrayLiteral.push(...visitor(targetInitializer, checker).flat());
                         }
                     }
                 }

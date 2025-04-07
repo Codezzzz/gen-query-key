@@ -1,4 +1,10 @@
-import { useInfiniteQuery, useQueries, useQuery, useSuspenseQuery } from '@tanstack/react-query';
+import {
+    queryOptions,
+    useInfiniteQuery,
+    useQueries,
+    useQuery,
+    useSuspenseQuery
+} from '@tanstack/react-query';
 
 export function useUserQuery() {
     useQuery({
@@ -53,4 +59,35 @@ export function useUserSuspenseQuery() {
     useSuspenseQuery({
         queryKey: ['user', 'suspense']
     });
+}
+
+const userListQueryOptions = queryOptions({
+    queryKey: ['user', 'query-option', 'list'],
+    queryFn: () => {
+        return Promise.resolve([]);
+    }
+});
+
+export function useUserListByQueryOptions() {
+    useQuery(userListQueryOptions);
+}
+
+const keys = {
+    default: 'bank',
+    bankList: (id: string) => [keys.default, 'bankList', id]
+};
+
+export const bankListQueryService = {
+    queryKey: (id: string) => {
+        return keys.bankList(id);
+    },
+    queryOptions: (id: string) => ({
+        queryKey: bankListQueryService.queryKey(id),
+        queryFn: () => {
+            return Promise.resolve([]);
+        }
+    })
+};
+export function useGetBankListQuery() {
+    return useQuery(bankListQueryService.queryOptions('1'));
 }

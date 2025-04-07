@@ -1,5 +1,11 @@
 # @query-key-gen/used-generator
 
+## 0.8.1
+
+### Patch Changes
+
+- 787a601: update
+
 ## 0.8.0
 
 ### Minor Changes

@@ -70,4 +70,4 @@ src/
 └── ...
 ```
 
-![img]("./assets/example.png")
+![img](./assets/example.png)

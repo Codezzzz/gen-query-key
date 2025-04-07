@@ -1,5 +1,11 @@
 # @query-key-gen/generator
 
+## 0.11.0
+
+### Minor Changes
+
+- b7cccac: update
+
 ## 0.10.0
 
 ### Minor Changes

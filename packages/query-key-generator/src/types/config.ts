@@ -1,12 +1,12 @@
 import { z } from 'zod';
 
 export const configSchema = z.object({
-    output: z.string().default('src/queryKeys.ts'),
-    globalQueryKeyName: z.string().default('globalQueryKeys'),
-    separator: z.string().default('-'),
-    path: z.string().default('./src/**/*.{jsx,tsx,ts}'),
-    ignoreFiles: z.array(z.string()).default([]),
-    factoryPrefix: z.string().default('')
+    output: z.string().optional().catch('src/queryKeys.ts'),
+    globalQueryKeyName: z.string().optional().catch('globalQueryKeys'),
+    separator: z.string().optional().catch('-'),
+    path: z.string().optional().catch('./src/**/*.{jsx,tsx,ts}'),
+    ignoreFiles: z.array(z.string()).optional().catch([]),
+    factoryPrefix: z.string().optional().catch('')
 });
 
 export type ConfigOptions = z.infer<typeof configSchema>;

@@ -9,8 +9,9 @@ import { ConfigOptions, configSchema, defaultConfig } from './types/config';
 export default function QueryKeyUsedPlugin(_config?: Omit<ConfigOptions, 'path'>): Plugin {
     const config = configSchema.parse({
         ...defaultConfig,
+        ...(_config ?? {}),
         ignoreFiles: [...defaultConfig.ignoreFiles, ...(_config?.ignoreFiles ?? [])]
-    });
+    }) as Required<ConfigOptions>;
     const rootDir = process.cwd(); // 프로젝트 루트 경로
     const ignoreFiles = config.ignoreFiles;
     const program = new Programmer(config);

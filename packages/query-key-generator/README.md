@@ -1,17 +1,4 @@
-# <p align="center">Query key generator</p>
-
-<p align="center">
-  <a href="https://npmjs.com/package/@query-key-gen/generator"><img src="https://img.shields.io/npm/v/@query-key-gen/generator.svg"/></a>
-  <a href="https://npmjs.com/package/@query-key-gen/generator"><img src="https://img.shields.io/npm/l/@query-key-gen/generator.svg?color=blue"/></a>
-</p>
-
-<p align="center">
-  <a href="https://npmjs.com/package/@query-key-gen/generator"><img src="https://img.shields.io/npm/dm/generouted.svg"/></a>
-  <a href="https://npmjs.com/package/@query-key-gen/generator"><img src="https://img.shields.io/npm/dt/@query-key-gen/generator.svg"/></a>
-</p>
-<br>
-
-<br>
+# Query key Generator
 
 Generated for [Vite](https://vitejs.dev)
 
@@ -162,7 +149,7 @@ export const globalQueryKeys = {
 } as const;
 ```
 
-### 3. ♻️ Using `globalQueryKeys` with `queryClient.invalidateQueries`
+### 4. ♻️ Using `globalQueryKeys` with `queryClient.invalidateQueries`
 
 Using globalQueryKeys with React Query’s queryClient.invalidateQueries() allows you to invalidate cache in a type-safe and typo-proof way using strongly typed query keys.
 

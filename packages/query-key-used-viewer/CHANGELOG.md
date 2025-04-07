@@ -1,5 +1,11 @@
 # @query-key-gen/used-viewer
 
+## 0.11.3
+
+### Patch Changes
+
+- 43c7637: update package.json
+
 ## 0.11.2
 
 ### Patch Changes

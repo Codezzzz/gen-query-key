@@ -1,5 +1,11 @@
 # @query-key-gen/used-generator
 
+## 0.11.5
+
+### Patch Changes
+
+- c84d998: update config option
+
 ## 0.11.3
 
 ### Patch Changes

@@ -3,6 +3,14 @@
     "version": "0.11.2",
     "description": "",
     "type": "module",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Codezzzz/gen-query-key",
+        "directory": "packages/query-key-generator"
+    },
+    "bugs": {
+        "url": "https://github.com/Codezzzz/gen-query-key/issues"
+    },
     "exports": {
         ".": {
             "types": "./lib/index.d.ts",
@@ -16,7 +24,21 @@
         "start": "node lib/index.js",
         "watch:build": "nodemon --watch './src' --ext '*' --exec 'pnpm build' "
     },
-    "keywords": [],
+    "keywords": [
+        "react-query",
+        "queryKey",
+        "vite-plugin",
+        "vite",
+        "codegen",
+        "react",
+        "typescript",
+        "query-key-generator",
+        "auto-generate",
+        "query-client",
+        "tanstack-query",
+        "query-keys",
+        "plugin"
+    ],
     "author": "",
     "license": "MIT",
     "dependencies": {

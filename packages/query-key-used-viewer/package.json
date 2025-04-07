@@ -2,6 +2,14 @@
     "name": "@query-key-gen/used-viewer",
     "version": "0.11.2",
     "type": "module",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Codezzzz/gen-query-key",
+        "directory": "packages/query-key-used-viewer"
+    },
+    "bugs": {
+        "url": "https://github.com/Codezzzz/gen-query-key/issues"
+    },
     "exports": {
         ".": {
             "types": "./lib/index.d.ts",
@@ -16,6 +24,21 @@
     "files": [
         "lib",
         "src"
+    ],
+    "keywords": [
+        "react-query",
+        "queryKey",
+        "query-usage",
+        "query-visualizer",
+        "vite-plugin",
+        "debug-tool",
+        "react",
+        "query-tracker",
+        "devtools",
+        "query-inspector",
+        "query-key-viewer",
+        "react-debugger",
+        "query-analyzer"
     ],
     "scripts": {
         "clean": "rm -rf lib",

@@ -1,5 +1,11 @@
 # @query-key-gen/used-generator
 
+## 0.6.0
+
+### Minor Changes
+
+- 01e7e96: update
+
 ## 0.5.0
 
 ### Minor Changes

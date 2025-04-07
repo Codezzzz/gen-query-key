@@ -39,6 +39,18 @@ All options are **optional**. If not specified, default values will be used.
 
 ---
 
+##### ⚠️ Caution: Using with `query-key-used-generator`
+
+If you're using [`@query-key-gen/used-generator`](https://npmjs.com/package/@query-key-gen/used-generator") together with this plugin, make sure to exclude its output file to prevent circular analysis or duplication.
+
+### ✅ Example
+
+````ts
+QueryKeyGeneratorPlugin({
+  // ./src/query-key-used-info.ts
+  ignoreFiles: ['query-key-used-info.ts']
+});
+
 #### 🛠 Example
 
 ```ts
@@ -60,7 +72,7 @@ export default defineConfig({
         })
     ]
 });
-```
+````
 
 ### 3 ⚙️ How Query Keys Are Generated
 

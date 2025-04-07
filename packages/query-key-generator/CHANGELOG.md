@@ -1,5 +1,11 @@
 # @query-key-gen/generator
 
+## 0.11.4
+
+### Patch Changes
+
+- ab0ecfe: update query-generator logic
+
 ## 0.11.3
 
 ### Patch Changes

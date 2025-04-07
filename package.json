@@ -13,8 +13,7 @@
         "prepare": "husky",
         "lint-staged": "lint-staged",
         "packages:build": "pnpm --filter @query-key-gen/generator build && pnpm --filter @query-key-gen/used-generator build && pnpm --filter @query-key-gen/used-viewer build",
-        "release": "pnpm changeset publish --no-git-checks --access public",
-        "build:release": "pnpm packages:build && pnpm release",
+        "release": "pnpm packages:build && pnpm release",
         "version": "pnpm changeset version"
     },
     "devDependencies": {

@@ -1,6 +1,6 @@
 {
     "name": "@query-key-gen/used-generator",
-    "version": "0.5.0",
+    "version": "0.6.0",
     "description": "",
     "type": "module",
     "exports": {

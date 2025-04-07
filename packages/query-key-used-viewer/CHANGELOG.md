@@ -1,5 +1,11 @@
 # @query-key-gen/used-viewer
 
+## 0.7.0
+
+### Minor Changes
+
+- e4a16b8: update
+
 ## 0.6.0
 
 ### Minor Changes

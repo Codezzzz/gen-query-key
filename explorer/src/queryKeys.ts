@@ -1,7 +1,17 @@
-const teststst = {
-    "def": ["teststst"],
-    "{test2}": (test2: string) => ["teststst", test2]
+const user = {
+    def: ['user'],
+    '{id}': (id: number) => ['user', id],
+    'list-{paging}': (paging: { page: number; size: 0 }) => ['user', 'list', paging],
+    'infinite-{paging}': (paging: { page: number; size: 0 }) => ['user', 'infinite', paging],
+    suspense: ['user', 'suspense']
 } as const;
+
+const post = {
+    def: ['post'],
+    '{id}': (id: number) => ['post', id]
+} as const;
+
 export const globalQueryKeys = {
-    teststst
+    user,
+    post
 } as const;

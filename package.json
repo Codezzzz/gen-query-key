@@ -13,7 +13,8 @@
         "prepare": "husky",
         "lint-staged": "lint-staged",
         "packages:build": "ultra -r --build --filter 'packages/*' build",
-        "release": "pnpm packages:build && pnpm changeset publish",
+        "release": "pnpm changeset",
+        "publish": "pnpm packages:build && pnpm changeset publish --access public",
         "version": "pnpm changeset version"
     },
     "devDependencies": {

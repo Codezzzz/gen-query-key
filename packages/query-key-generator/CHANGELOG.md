@@ -1,5 +1,11 @@
 # @query-key-gen/generator
 
+## 0.8.0
+
+### Minor Changes
+
+- 1c48e4b: update
+
 ## 0.7.0
 
 ### Minor Changes

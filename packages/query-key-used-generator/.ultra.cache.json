@@ -1,0 +1,21 @@
+{
+    "files": {
+        ".turbo": "1743985135229.822",
+        "lib": "1743986048118.7751",
+        "node_modules": "1743751613372.6316",
+        "CHANGELOG.md": "b6d0edbb2fdb396961fc90e48276e3a1e51e7163",
+        "README.md": "9b9a57ac93cd2ca4cee91be46336b1e13b90fdc1",
+        "package.json": "6a30f065c527aa63953a9645baf4c87656ffcd04",
+        "src/core/QueryKeyUsedInfoGenerator.ts": "8d8e3b1d3cf68275d75d9c67210a3f8e05c27c87",
+        "src/core/index.ts": "64830ff2a399328aba05be5df1b64acf3865b36b",
+        "src/index.ts": "7fe960b4c559fd488bc6b5958c8422c02fe910b4",
+        "src/queryFinder/QueryKeyUsedFinder.ts": "9dd9ef30b3993be5f6bc3867086fe58bfd657725",
+        "src/queryFinder/index.ts": "4af4bb7c48579683e1bbe6e341f1a5806e67563a",
+        "src/types/config.ts": "1cde955b78ae7be37fd7f629ce7459560dd85cd2",
+        "src/types/index.ts": "f03c2281a9140975800795ec2a68bf8c53273244",
+        "src/utils/index.ts": "0ada954b3e9c1d296418c15769351fd3d4f2b93a",
+        "tsconfig.json": "41db3a2a30dd2a76788252c579552e7049c2118d",
+        "tsup.config.ts": "99c48d132d7fa99eca2ea5d9f87c38ca955386bd"
+    },
+    "deps": { "@query-key-gen/generator-common": 0 }
+}

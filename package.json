@@ -12,8 +12,8 @@
         "lint": "eslint .",
         "prepare": "husky",
         "lint-staged": "lint-staged",
-        "packages:build": "pnpm --filter @query-key-gen/generator build && pnpm --filter @query-key-gen/used-generator build && pnpm --filter @query-key-gen/used-viewer build",
-        "release": "pnpm packages:build && pnpm release",
+        "packages:build": "ultra -r --build --filter 'packages/*' build",
+        "release": "pnpm packages:build && pnpm changeset publish",
         "version": "pnpm changeset version"
     },
     "devDependencies": {
@@ -32,7 +32,8 @@
         "**/*": "prettier --write --ignore-unknown"
     },
     "dependencies": {
-        "@changesets/cli": "^2.28.1"
+        "@changesets/cli": "^2.28.1",
+        "ultra-runner": "^3.10.5"
     },
     "workspaces": [
         "packages/*"

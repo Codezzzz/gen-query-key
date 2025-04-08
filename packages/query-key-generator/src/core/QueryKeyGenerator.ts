@@ -126,7 +126,7 @@ class QueryKeyGenerator extends GenericRunner<ConfigOptions> {
                 config.globalQueryKeyName,
                 config.factoryPrefix
             );
-            this.printer(outputFile, keyStatements, mergeKeyStatement);
+            await this.printer(outputFile, keyStatements, mergeKeyStatement);
             prettify(outputFile.fileName);
         } catch (error) {
             if (error instanceof Error) {

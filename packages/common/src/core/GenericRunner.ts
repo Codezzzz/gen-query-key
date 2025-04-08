@@ -11,7 +11,7 @@ class GenericRunner<T> {
     }
 
     execute() {
-        this.process();
+        return this.process();
     }
 }
 

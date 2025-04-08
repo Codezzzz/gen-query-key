@@ -10,7 +10,12 @@ const post = {
     def: ['post'],
     '{id}': (id: number) => ['post', id]
 } as const;
+const bankList = {
+    def: ['bankList'],
+    '{id}': (id: string) => ['bankList', id]
+} as const;
 export const globalQueryKeys = {
     user,
-    post
+    post,
+    bankList
 } as const;

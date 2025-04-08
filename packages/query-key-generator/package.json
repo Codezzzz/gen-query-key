@@ -21,6 +21,7 @@
     "scripts": {
         "dev": "tsup --watch",
         "build": "tsup --clean",
+        "test": "vitest",
         "start": "node lib/index.js",
         "watch:build": "nodemon --watch './src' --ext '*' --exec 'pnpm build' "
     },
@@ -46,10 +47,12 @@
         "tsup": "^8.3.6",
         "typescript": "~5.7.2",
         "vite": "^6.1.0",
+        "vitest": "^3.1.1",
         "zod": "^3.24.2"
     },
     "devDependencies": {
         "@query-key-gen/generator-common": "workspace:*",
+        "@tanstack/react-query": "^5.71.1",
         "@types/node": "^22.13.14"
     },
     "publishConfig": {

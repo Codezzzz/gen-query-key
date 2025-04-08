@@ -14,7 +14,8 @@ class Programmer {
     constructor(config: Required<Config>) {
         this.config = config;
         this.compilerOptions = {
-            target: ts.ScriptTarget.ES2015
+            module: ts.ModuleKind.ESNext,
+            target: ts.ScriptTarget.ESNext
         };
     }
 

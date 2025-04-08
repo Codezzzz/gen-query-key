@@ -125,3 +125,8 @@ out
 
 # lib 
 lib
+
+
+# test output
+**/__test__/**/output.ts
+**/__test__/**/result.ts

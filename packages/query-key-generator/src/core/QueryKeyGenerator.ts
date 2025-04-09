@@ -113,8 +113,8 @@ class QueryKeyGenerator extends GenericRunner<ConfigOptions> {
 
     protected override process = async () => {
         const config = this.config;
-        const start = Date.now();
-        logger.info('start query key generator');
+        // const start = Date.now();
+        // logger.info('start query key generator');
         try {
             const { program, checker } = await this.programmer.create();
             const { outputFile, projectFiles } = await this.programmer.findFiles(program);
@@ -133,7 +133,7 @@ class QueryKeyGenerator extends GenericRunner<ConfigOptions> {
                 logger.error(`ERROR: ${error.message}\n${error.stack}`);
             }
         } finally {
-            logger.info(`query key generator completed in ${Date.now() - start} ms`);
+            // logger.info(`query key generator completed in ${Date.now() - start} ms`);
         }
     };
 }

@@ -20,7 +20,7 @@ export default function QueryKeyPlugin(_config?: Omit<ConfigOptions, 'path'>): P
 
     return {
         name: '@query-key-gen/generator',
-        enforce: 'pre',
+        enforce: 'post',
         configureServer(server) {
             const listener = (absolutePath = '') => {
                 const filePath = path.relative(rootDir, absolutePath);

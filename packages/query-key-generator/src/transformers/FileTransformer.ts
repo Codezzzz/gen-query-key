@@ -30,7 +30,7 @@ namespace FileTransformer {
             const content: string = printer.printFile(transformedSourceFile);
 
             // 파일 쓰기
-            await fs.promises.writeFile(outputFile, content, 'utf-8');
+            fs.writeFileSync(outputFile, content, 'utf-8');
         }
     };
 }

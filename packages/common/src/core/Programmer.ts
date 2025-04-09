@@ -26,10 +26,12 @@ class Programmer {
                 onlyFiles: true
             });
 
-            const program = ts.createProgram({
+            const builder = ts.createIncrementalProgram({
                 rootNames: files,
                 options: this.compilerOptions
             });
+
+            const program = builder.getProgram();
 
             return {
                 program,

@@ -6,7 +6,7 @@
     "scripts": {
         "dev": "vite",
         "watch:dev": "nodemon --watch '../packages/core/dist' --exec 'pnpm dev'",
-        "build": "tsc -b && vite build",
+        "build": "tsc && vite build",
         "lint": "eslint .",
         "preview": "vite preview"
     },

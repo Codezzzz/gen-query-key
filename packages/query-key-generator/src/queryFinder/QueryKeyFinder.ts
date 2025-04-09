@@ -201,6 +201,10 @@ namespace QueryKeyFinder {
                                             visit(statement);
                                         });
                                     }
+
+                                    if (ts.isParenthesizedExpression(body)) {
+                                        visit(body.expression);
+                                    }
                                 }
                             }
                         }
@@ -211,6 +215,30 @@ namespace QueryKeyFinder {
                             if (ts.isCallExpression(body)) {
                                 visit(body);
                             }
+
+                            if (ts.isBlock(body)) {
+                                const statements = body.statements;
+
+                                statements.forEach(statement => {
+                                    visit(statement);
+                                });
+                            }
+
+                            if (ts.isParenthesizedExpression(body)) {
+                                visit(body.expression);
+                            }
+                        }
+
+                        if (objectInitializer && ts.isCallExpression(objectInitializer)) {
+                            visit(objectInitializer);
+                        }
+                    }
+
+                    if (valueDeclaration && ts.isFunctionDeclaration(valueDeclaration)) {
+                        const body = valueDeclaration.body;
+
+                        if (body && ts.isBlock(body)) {
+                            visit(body);
                         }
                     }
                 }
@@ -221,7 +249,37 @@ namespace QueryKeyFinder {
              *  queryKey: ~
              * })
              */
+
+            /**
+             * useQuery({
+             *    queries: [query1, query2]
+             * })
+             */
             if (ts.isObjectLiteralExpression(node)) {
+                // queries 예외 처리
+                const properties = node.properties;
+
+                const isQueries = properties.some(
+                    property =>
+                        ts.isPropertyAssignment(property) && property.name.getText() === 'queries'
+                );
+
+                if (isQueries) {
+                    properties.forEach(property => {
+                        if (
+                            ts.isPropertyAssignment(property) &&
+                            property.name.getText() === 'queries'
+                        ) {
+                            const initializer = property.initializer;
+
+                            visit(initializer);
+                        }
+                    });
+
+                    return;
+                }
+
+                console.log(node.getText());
                 arrayLiteral.push(objectExpression(node, checker));
             }
 

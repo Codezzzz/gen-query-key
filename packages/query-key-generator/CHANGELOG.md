@@ -1,5 +1,11 @@
 # @query-key-gen/generator
 
+## 0.11.6
+
+### Patch Changes
+
+- c57ffba: fix error and adding testing code
+
 ## 0.11.5
 
 ### Patch Changes

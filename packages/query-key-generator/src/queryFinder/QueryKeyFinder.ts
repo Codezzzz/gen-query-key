@@ -279,7 +279,6 @@ namespace QueryKeyFinder {
                     return;
                 }
 
-                console.log(node.getText());
                 arrayLiteral.push(objectExpression(node, checker));
             }
 

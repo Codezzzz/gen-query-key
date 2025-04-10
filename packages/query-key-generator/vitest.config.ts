@@ -3,6 +3,7 @@ export default defineConfig({
     test: {
         globals: true,
         environment: 'node',
-        include: ['src/__test__/**/*.test.ts']
+        include: ['src/__test__/**/*.test.ts'],
+        reporters: ['verbose']
     }
 });

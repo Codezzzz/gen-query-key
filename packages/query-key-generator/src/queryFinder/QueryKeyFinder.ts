@@ -427,6 +427,29 @@ namespace QueryKeyFinder {
                                 kind: QueryNodeKind.TypeOfKeyword
                             };
                         }
+
+                        // tuple type
+
+                        // if (valueDeclaration.type?.kind === ts.SyntaxKind.TupleType) {
+                        //     console.log(type);
+                        //     return {
+                        //         name: el.text,
+                        //         type: type,
+                        //         symbol: symbol,
+                        //         kind: QueryNodeKind.Tuple
+                        //     };
+                        // }
+
+                        if (valueDeclaration.type && ts.isTupleTypeNode(valueDeclaration.type)) {
+                            const tupleNode = valueDeclaration.type;
+
+                            return {
+                                name: el.text,
+                                type: tupleNode,
+                                symbol: symbol,
+                                kind: QueryNodeKind.Tuple
+                            };
+                        }
                     }
 
                     /**

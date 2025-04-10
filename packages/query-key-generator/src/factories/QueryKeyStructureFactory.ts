@@ -1,7 +1,7 @@
 import ts from 'typescript';
 import { IQueryNodeType, QueryNodeKind } from '../types/QueryNodeType';
 import { TypeGuard, nodeByName } from '../utils';
-import { TypeConverterFactory } from './TypeConverterFactory';
+import { TypeConverterFactory, TypeConverterFactoryGuard } from './TypeConverterFactory';
 namespace QueryKeyStructureFactory {
     const factory = ts.factory;
 
@@ -61,7 +61,7 @@ namespace QueryKeyStructureFactory {
                     return nodeByName.identifier(item.name);
                 }
 
-                return undefined;
+                return nodeByName.identifier(item.name);
             })
             .filter(Boolean) as ts.Expression[];
 
@@ -74,7 +74,7 @@ namespace QueryKeyStructureFactory {
         return node
             .map(item => {
                 if (TypeGuard.symbol(item.type)) {
-                    const isOptional = TypeConverterFactory.isOptional(item.type);
+                    const isOptional = TypeConverterFactoryGuard.isOptional(item.type);
                     return factory.createParameterDeclaration(
                         undefined,
                         undefined,
@@ -86,7 +86,7 @@ namespace QueryKeyStructureFactory {
                 }
 
                 if (TypeGuard.tsType(item.type) && item.kind === QueryNodeKind.EnumMember) {
-                    const isOptional = TypeConverterFactory.isOptional(item.symbol!);
+                    const isOptional = TypeConverterFactoryGuard.isOptional(item.symbol!);
 
                     return factory.createParameterDeclaration(
                         undefined,
@@ -99,7 +99,7 @@ namespace QueryKeyStructureFactory {
                 }
 
                 if (TypeGuard.tsType(item.type) && item.kind === QueryNodeKind.TypeOfKeyword) {
-                    const isOptional = TypeConverterFactory.isOptional(item.symbol!);
+                    const isOptional = TypeConverterFactoryGuard.isOptional(item.symbol!);
 
                     const typeOfNode = TypeConverterFactory.typeofKeyword(item.type, checker);
 
@@ -109,6 +109,21 @@ namespace QueryKeyStructureFactory {
                         nodeByName.identifier(item.name),
                         isOptional ? factory.createToken(ts.SyntaxKind.QuestionToken) : undefined,
                         typeOfNode,
+                        undefined
+                    );
+                }
+
+                if (TypeGuard.tuple(item.type) && item.kind === QueryNodeKind.Tuple) {
+                    const isOptional = TypeConverterFactoryGuard.isOptional(item.symbol!);
+
+                    const tupleNode = TypeConverterFactory.tuple(item.type, checker);
+
+                    return factory.createParameterDeclaration(
+                        undefined,
+                        undefined,
+                        nodeByName.identifier(item.name),
+                        isOptional ? factory.createToken(ts.SyntaxKind.QuestionToken) : undefined,
+                        tupleNode,
                         undefined
                     );
                 }

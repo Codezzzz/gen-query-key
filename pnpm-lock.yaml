@@ -138,6 +138,9 @@ importers:
       '@types/node':
         specifier: ^22.13.14
         version: 22.13.14
+      prettier:
+        specifier: ^3.5.1
+        version: 3.5.3
 
   packages/query-key-used-generator:
     dependencies:

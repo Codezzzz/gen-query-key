@@ -13,6 +13,9 @@ const TypeGuard = {
     },
     tsType: (node: IQueryNodeType['type']): node is ts.Type => {
         return typeof node === 'object' && 'symbol' in node;
+    },
+    tuple: (node: IQueryNodeType['type']): node is ts.TupleTypeNode => {
+        return ts.isTupleTypeNode(node as ts.Node);
     }
 };
 

@@ -1,5 +1,11 @@
 # @query-key-gen/generator
 
+## 0.11.7
+
+### Patch Changes
+
+- 261b80e: update query-key-gen/generator
+
 ## 0.11.6
 
 ### Patch Changes

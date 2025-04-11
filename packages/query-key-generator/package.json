@@ -22,8 +22,9 @@
         "dev": "tsup --watch",
         "build": "tsup --clean",
         "test": "vitest",
+        "test:watch": "vitest --watch ",
         "start": "node lib/index.js",
-        "watch:build": "nodemon --watch './src' --ext '*' --exec 'pnpm build' "
+        "watch:build": "nodemon --watch './src' --ext '*' --ignore './src/__test__' --exec 'pnpm build' "
     },
     "keywords": [
         "react-query",
@@ -53,7 +54,8 @@
     "devDependencies": {
         "@query-key-gen/generator-common": "workspace:*",
         "@tanstack/react-query": "^5.71.1",
-        "@types/node": "^22.13.14"
+        "@types/node": "^22.13.14",
+        "prettier": "^3.5.1"
     },
     "publishConfig": {
         "access": "public"

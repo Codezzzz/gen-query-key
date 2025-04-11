@@ -1,15 +1,26 @@
 import { Programmer } from '@query-key-gen/generator-common';
 import { readdirSync, readFileSync } from 'node:fs';
-import { basename, dirname, join } from 'node:path';
+import path, { basename, dirname, join } from 'node:path';
+import prettier from 'prettier';
 import { describe, expect, test } from 'vitest';
 import { QueryKeyGenerator } from '../core/QueryKeyGenerator.js';
 import { defaultConfig } from '../types/config.js';
-
 interface RunFixtureTestsOptions {
     fixturesDir: string;
     extension?: string;
     name?: string;
 }
+
+const prettierConfig: prettier.Options = {
+    parser: 'typescript',
+    arrowParens: 'avoid',
+    printWidth: 1000000000,
+    singleQuote: true,
+    trailingComma: 'none',
+    bracketSpacing: true,
+    tabWidth: 4,
+    semi: false
+};
 
 export function runFixtureTests({
     fixturesDir,
@@ -23,7 +34,13 @@ export function runFixtureTests({
         .filter(filename => filename.endsWith(`.input.${extension}`))
         .map(filename => basename(filename, `.input.${extension}`));
 
-    describe(`${transformName} generate queryKey tests`, () => {
+    // transformName 상대 경로로 변환
+    const transformNamePath = path
+        .relative(process.cwd(), transformName)
+        .replace('src/__test__/', '')
+        .replace('/generator.test.ts', '');
+
+    describe(`${transformNamePath} generate queryKey tests`, () => {
         inputFiles.forEach(testCase => {
             test(`${testCase} correctly`, async () => {
                 const inputPath = join(fixturesDir, `${testCase}.input.${extension}`);
@@ -45,16 +62,12 @@ export function runFixtureTests({
                 const output = readFileSync(outputPath, 'utf8');
                 const result = readFileSync(resultPath, 'utf8');
 
-                const trimOutput = replacer(output);
-                const trimResult = replacer(result);
+                // run prettier
+                const prettierOutput = await prettier.format(output, prettierConfig);
+                const prettierResult = await prettier.format(result, prettierConfig);
 
-                expect(trimOutput).toBe(trimResult);
+                expect(prettierOutput).toBe(prettierResult);
             });
         });
     });
 }
-
-const replacer = (str: string) => {
-    // 공백, 따옴표, 쉼표 제거, ; 제거
-    return str.replace(/[\s'"]/g, '').replace(/;/g, '');
-};

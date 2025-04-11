@@ -102,7 +102,7 @@ class QueryKeyGenerator extends GenericRunner<ConfigOptions> {
         keyStatement: { key: string; statement: ts.VariableStatement }[],
         mergeKeyStatement: ts.VariableStatement
     ) => {
-        const printer = ts.createPrinter({ newLine: ts.NewLineKind.LineFeed });
+        const printer = ts.createPrinter();
 
         FileTransformer.transform({
             sourceFile,
